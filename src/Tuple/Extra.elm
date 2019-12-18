@@ -175,7 +175,7 @@ map f (a, b) =
 
 -- Maybes ----------------------------------------------------------------------
 {-| Occasionally you might find yourself in a situation where both values
-contained in a tuple a `Maybe`s. Sometimes it makes more sense to take those
+contained in a tuple are `Maybe`s. Sometimes it makes more sense to take those
 values and make the tuple a `Maybe` instead.
 
     Tuple.sequenceMaybe (Just 10, Nothing)
@@ -202,7 +202,7 @@ sequenceFirstMaybe t =
 {-| Similar to `sequenceMaybe` but only looks at the first value in a tuple
 to check for nothingness.
 
-    Tuple.sequenceFirstMaybe (10, Just "Cat")
+    Tuple.sequenceSecondMaybe (10, Just "Cat")
       == Maybe (10, "Cat")
 -}
 sequenceSecondMaybe : Tuple a (Maybe b) -> Maybe (Tuple a b)
