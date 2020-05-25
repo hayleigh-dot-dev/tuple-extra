@@ -86,9 +86,9 @@ string, join together two strings in a tuple.
     Tuple.join " " ("Hello", "world") 
       == "Hello world"
 -}
-join : String -> Tuple String String -> String
-join s (a, b) =
-  a ++ s ++ b
+join : appendable -> Tuple appendable appendable -> appendable
+join =
+  joinBy identity identity
 
 {-| Works just like join, but first converts the values of the tuple to strings.
 These means the function works with any type of tuple.
@@ -96,9 +96,9 @@ These means the function works with any type of tuple.
     Tuple.joinBy String.fromInt suitToString " of " (7, Club)
       == "Seven of Clubs"
 -}
-joinBy : (a -> String) -> (b -> String) -> String -> Tuple a b -> String
+joinBy : (a -> appendable) -> (b -> appendable) -> appendable -> Tuple a b -> appendable
 joinBy f g s (a, b) =
- f a ++ s ++ g b
+  f a ++ s ++ g b
 
 {-| Similar to List.sum but for tuples instead of lists. Adds together two
 numbers contained in a tuple.
