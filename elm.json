@@ -1,9 +1,9 @@
 {
     "type": "package",
-    "name": "pd-andy/tuple-extra",
+    "name": "hayleigh-dot-dev/tuple-extra",
     "summary": "A collection of helpers for the Tuple type.",
     "license": "MIT",
-    "version": "1.0.1",
+    "version": "1.0.0",
     "exposed-modules": [
         "Tuple.Extra"
     ],
